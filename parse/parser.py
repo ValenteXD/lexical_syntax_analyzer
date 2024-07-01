@@ -157,6 +157,35 @@ class Parser:
 
             self.enclosing = saved_stmt
 
+        elif self.__look.tag == Tag.SWITCH:
+            saved_stmt = self.enclosing
+            self.enclosing = True
+            self.match(Tag.SWITCH)
+            self.match('(')
+            x = self.bool_()
+            self.match(')')
+            self.stmt()
+
+            if x.type_ != NUM:
+                self.error('number required in switch')
+
+            self.enclosing = saved_stmt
+
+        elif self.__look.tag == Tag.CASE:
+            saved_stmt = self.enclosing
+            self.enclosing = True
+            self.match(Tag.CASE)
+            self.match('(')
+            x = self.bool_()
+            self.match(')')
+            self.stmt()
+
+            if x.type_ != NUM:
+                self.error('number required in case')
+            
+            self.enclosing = saved_stmt
+
+
         elif self.__look.tag == Tag.BREAK:
             self.match(Tag.BREAK)
             self.match(';')

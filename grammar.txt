@@ -1,3 +1,6 @@
+Sintaxes para adicionar: import passa nome de arquivo, arquivo será analisado sem a MAIN
+sintaxe para switch
+
 program  ::= func | ε
 func	 ::= DEFINE type id ( decls ) block program
 block	 ::= BEGIN decls stmts END program
@@ -15,6 +18,8 @@ stmt	 ::= id = bool;
           |  READ id;
           |  block
           |  RETURN bool;
+          |  SWITCH ( num ) stmt
+          |  CASE ( num ) stmt
 bool	 ::= bool OR join | join
 join	 ::= join AND equality | equality
 equality ::= equality == rel | equality != rel | rel

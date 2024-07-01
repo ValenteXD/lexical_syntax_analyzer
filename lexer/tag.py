@@ -1,3 +1,5 @@
+# tags a serem criadas: import, continue, for, pi, string, switch
+# resolver bug do enter após função dando erro de compilação
 class Tag:
     AND = 256
     BASIC = 257
@@ -27,3 +29,5 @@ class Tag:
     TEMP = 281
     TRUE = 282
     WHILE = 283
+    SWITCH = 284
+    CASE = 285

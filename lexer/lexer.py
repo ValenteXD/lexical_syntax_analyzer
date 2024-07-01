@@ -27,6 +27,8 @@ class Lexer:
         self.reserve(Word('PRINT', Tag.PRINT))
         self.reserve(Word('READ', Tag.READ))
         self.reserve(Word('RETURN', Tag.RETURN))
+        self.reserve(Word('SWITCH',Tag.SWITCH))
+        self.reserve(Word('CASE',Tag.CASE))
         self.reserve(TRUE)
         self.reserve(FALSE)
         self.reserve(NUM)
