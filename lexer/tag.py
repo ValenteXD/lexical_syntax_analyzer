@@ -31,3 +31,4 @@ class Tag:
     WHILE = 283
     SWITCH = 284
     CASE = 285
+    FOR = 286
